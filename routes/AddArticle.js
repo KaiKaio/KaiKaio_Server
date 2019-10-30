@@ -10,7 +10,7 @@ module.exports =  (router) => {
   router.get('/api/Article/', async (ctx, next) => {
     const results = await ArticleModel.find();
     let code = 0;
-    let msg = '查询成功'
+    let msg = '查询成功啦~'
     ctx.body = {
       code:code,
       msg: msg,
