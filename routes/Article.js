@@ -61,6 +61,7 @@ module.exports =  (router) => {
         title: ctx.request.body.title,
         content: ctx.request.body.content,
         description: ctx.request.body.description,
+        cover: ctx.request.body.cover,
         updatetime: dateFormat
       }
     })

@@ -26,7 +26,8 @@ const ArticleSchema = new mongoose.Schema({
   description: { type: String, require: true },
   content: { type: String, require: true },
   createtime: { type: String, require: true },
-  updatetime: { type: String, require: false}
+  updatetime: { type: String, require: false},
+  cover: {type: String, require: false}
 })
 
 // 文档（对象）约束
@@ -41,8 +42,14 @@ const MusicSchema = new mongoose.Schema({
   albumart: { type: String, require: false }
 })
 
+const BackgroundSchema = new mongoose.Schema({
+  url: { type: String, require: true }
+})
+
 const ArticleModel = mongoose.model('Article', ArticleSchema)
 const MusicModel = mongoose.model('Music', MusicSchema)
+const BackgroundModel = mongoose.model('Background', BackgroundSchema)
 
 exports.ArticleModel = ArticleModel
 exports.MusicModel = MusicModel
+exports.BackgroundModel = BackgroundModel

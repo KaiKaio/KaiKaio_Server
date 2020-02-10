@@ -6,6 +6,7 @@
 
 const Article_Routes = require('./Article') // 文章相关路由
 const Music_Routes = require('./Music') // 文章相关路由
+const Background_Routes = require('./Background') // 文章相关路由
 
 module.exports =  (router) => {
   // 首页入口
@@ -18,4 +19,5 @@ module.exports =  (router) => {
 
   Article_Routes(router);
   Music_Routes(router);
+  Background_Routes(router);
 }
