@@ -30,20 +30,23 @@ module.exports =  (router) => {
     let date = new Date();
     let dateFormat = `${date.getFullYear().toString()}-${(date.getMonth() + 1).toString()}-${date.getDate().toString()}`
 
-    const article = new ArticleModel({
-      title: ctx.request.body.title,
-      description: ctx.request.body.description,
-      content: ctx.request.body.content,
-      createtime: dateFormat
-    })
+
     let code = 0;
     let msg = ''
     try {
+      const article = new ArticleModel({
+        title: ctx.request.body.title,
+        description: ctx.request.body.description,
+        content: ctx.request.body.content,
+        createtime: dateFormat,
+        cover: ctx.request.body.cover
+      })
       await article.save();
-      msg = '添加成功';
+      code = 0
+      msg = '添加成功了哦';
     } catch (error) {
       code = 1;
-      msg = '添加失败';
+      msg = '添加失败了哦';
     }
     ctx.body = {
       code: code,
