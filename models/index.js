@@ -5,11 +5,11 @@
 */
 
 const mongoose = require('mongoose')
+const { mongoKey } = require('../config/mongoConfig')
 
 // ES6原生的Promise库
 mongoose.Promise = global.Promise;
-
-mongoose.connect('mongodb://localhost:27017/KaiKaiBlog', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(`mongodb://${mongoKey}`,{useNewUrlParser: true,useUnifiedTopology: true})
 
 // 如果连接失败会执行error回调
 mongoose.connection.on("error", (error) => {
