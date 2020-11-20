@@ -12,7 +12,7 @@ module.exports =  (router) => {
   // 首页入口
   router.get('/', async (ctx, next) => {
     ctx.state = {
-      title: 'Hello World Koa2'
+      title: 'Koa2 Server For Kaikaio'
     }
     await ctx.render('index', ctx.state)
   });
