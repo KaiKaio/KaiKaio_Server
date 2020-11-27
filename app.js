@@ -14,8 +14,8 @@ const debug = require('debug')('koa2:server')
 const path = require('path')
 
 const config = require('./config')
-
 const routes = require('./routes')
+const koaJwtCustom = require('./middlewares/koa-jwt-custom')
 
 const port = process.env.PORT || config.port
 
@@ -35,6 +35,7 @@ app.use(async (ctx, next)=> {
 // error handler
 onerror(app)
 
+koaJwtCustom(app) // KoaJwt自定义中间件
 // middlewares
 app.use(bodyparser())
   .use(json())
@@ -60,7 +61,6 @@ routes(router)
 
 app.on('error', function(err, ctx) {
   console.log(err)
-  logger.error('server error', err, ctx)
 })
 
 module.exports = app.listen(config.port, () => {
