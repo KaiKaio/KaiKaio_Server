@@ -7,6 +7,11 @@
 const mongoose = require('mongoose')
 const { mongoKey } = require('../config/mongoConfig')
 
+const { MusicSchema } = require('./MusicSchema')
+const { UserSchema } = require('./UserSchema')
+const { BackgroundSchema } = require('./BackgroundSchema')
+const { ArticleSchema } = require('./ArticleSchema')
+
 // ES6原生的Promise库
 mongoose.Promise = global.Promise;
 mongoose.connect(`mongodb://${mongoKey}`,{useNewUrlParser: true,useUnifiedTopology: true})
@@ -20,36 +25,7 @@ mongoose.connection.on("open",  () => {
   console.log("DB数据库连接成功");
 });
 
-// 文档（对象）约束
-const ArticleSchema = new mongoose.Schema({
-  title: { type: String, require: true },
-  description: { type: String, require: true },
-  content: { type: String, require: true },
-  createtime: { type: String, require: true },
-  updatetime: { type: String, require: false},
-  cover: {type: String, require: false}
-})
-
-// 文档（对象）约束
-const MusicSchema = new mongoose.Schema({
-  title: { type: String, require: true },
-  url: { type: String, require: true },
-  singer: { type: String, require: false },
-  lrc: { type: String, require: false },
-  createtime: { type: String, require: true },
-  updatetime: { type: String, require: false },
-  delname: { type: String, require: true },
-  albumart: { type: String, require: false }
-})
-
-const BackgroundSchema = new mongoose.Schema({
-  url: { type: String, require: true }
-})
-
-const ArticleModel = mongoose.model('Article', ArticleSchema)
-const MusicModel = mongoose.model('Music', MusicSchema)
-const BackgroundModel = mongoose.model('Background', BackgroundSchema)
-
-exports.ArticleModel = ArticleModel
-exports.MusicModel = MusicModel
-exports.BackgroundModel = BackgroundModel
+exports.ArticleModel = mongoose.model('Article', ArticleSchema)
+exports.MusicModel = mongoose.model('Music', MusicSchema)
+exports.BackgroundModel = mongoose.model('Background', BackgroundSchema)
+exports.UserModel = mongoose.model('User', UserSchema)
