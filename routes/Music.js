@@ -7,7 +7,7 @@
 const { MusicModel } = require('../models')
 
 module.exports =  (router) => {
-  router.get('/api/Music/', async (ctx, next) => {
+  router.get('/api/Music', async (ctx, next) => {
     const results = await MusicModel.find();
     let code = 0;
     let msg = '查询音乐成功啦~'

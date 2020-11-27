@@ -1,7 +1,7 @@
 const { BackgroundModel } = require('../models')
 
 module.exports =  (router) => {
-  router.get('/api/Background/', async (ctx, next) => {
+  router.get('/api/Background', async (ctx, next) => {
     const results = await BackgroundModel.find();
     let code = 0;
     let msg = '查询背景成功啦~'
