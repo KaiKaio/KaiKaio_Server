@@ -1,68 +1,76 @@
-const Koa = require('koa')
-const Router = require('koa-router')
-const app = new Koa()
-const router = new Router()
+const fs = require("fs");
 
-const views = require('koa-views')
-const co = require('co')
-const convert = require('koa-convert')
-const json = require('koa-json')
-const onerror = require('koa-onerror')
-const bodyparser = require('koa-bodyparser')
-const logger = require('koa-logger')
-const debug = require('debug')('koa2:server')
-const path = require('path')
+const Koa = require("koa");
+const Router = require("koa-router");
+const app = new Koa();
+const router = new Router();
 
-const config = require('./config')
-const routes = require('./routes')
-const koaJwtCustom = require('./middlewares/koa-jwt-custom')
+const views = require("koa-views");
+const co = require("co");
+const convert = require("koa-convert");
+const json = require("koa-json");
+const onerror = require("koa-onerror");
+const bodyparser = require("koa-bodyparser");
+const logger = require("koa-logger");
+const debug = require("debug")("koa2:server");
+const path = require("path");
+const koajwt = require("koa-jwt");
 
-const port = process.env.PORT || config.port
+const corsMiddlewares = require("./middlewares/cors-middlewares");
 
-// 跨域
-app.use(async (ctx, next)=> {
-  ctx.set('Access-Control-Allow-Origin', '*');
-  // ctx.set('Access-Control-Allow-Origin', 'http://localhost:3000');
-  ctx.set('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
-  ctx.set('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
-  if (ctx.method == 'OPTIONS') {
-    ctx.body = 200;
-  } else {
-    await next();
-  }
-});
+const config = require("./config");
+const routes = require("./routes");
+
+const public_key = fs.readFileSync(
+  path.join(__dirname, "./util/ssl_key/rsa_public_key.pem")
+);
 
 // error handler
-onerror(app)
+onerror(app);
 
-koaJwtCustom(app) // KoaJwt自定义中间件
-// middlewares
-app.use(bodyparser())
+// 配置跨域
+app.use(corsMiddlewares());
+
+// 配置Token校验
+app.use(
+  koajwt({
+    secret: public_key,
+  }).unless({
+    path: ["/api/Article", "/api/Background", "/api/Music", "/api/user/login"],
+  })
+);
+
+app.use(async (ctx, next) => {
+  const start = new Date();
+  await next();
+  const ms = new Date() - start;
+  console.log(`${ctx.method} ${ctx.url} - ${ms}$ms`);
+});
+
+app
+  .use(bodyparser())
   .use(json())
   .use(logger())
-  .use(require('koa-static')(__dirname + '/public'))
-  .use(views(path.join(__dirname, '/views'), {
-    options: {settings: {views: path.join(__dirname, 'views')}},
-    map: {'ejs': 'ejs'},
-    extension: 'ejs'
-  }))
+  .use(require("koa-static")(__dirname + "/public"))
+  .use(
+    views(path.join(__dirname, "/views"), {
+      options: { settings: { views: path.join(__dirname, "views") } },
+      map: { ejs: "ejs" },
+      extension: "ejs",
+    })
+  )
+
+// 路由配置相关
+routes(router);
+// Koa-Router配置
+app
   .use(router.routes())
   .use(router.allowedMethods())
 
-// logger
-app.use(async (ctx, next) => {
-  const start = new Date()
-  await next()
-  const ms = new Date() - start
-  console.log(`${ctx.method} ${ctx.url} - $ms`)
-})
-
-routes(router)
-
-app.on('error', function(err, ctx) {
-  console.log(err)
-})
+app.on("error", function (err, ctx) {
+  console.log(err, ' ==> 服务报错原因');
+});
 
 module.exports = app.listen(config.port, () => {
-  console.log(`Listening on http://localhost:${config.port}`)
-})
+  console.log(`Listening on http://localhost:${config.port}`);
+});

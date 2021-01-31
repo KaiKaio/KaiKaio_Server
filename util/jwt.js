@@ -11,11 +11,13 @@ class Jwt {
 
   // 生成token
   generateToken() {
-    let data = this.data;
-    const JWT_EXPIRATION = 1000 * 60 * 60; // 1Hours时限
-    let cert = fs.readFileSync(path.join(__dirname, "./ssl_key/rsa_private_key.pem")); //私钥 可以自己生成
+    let userid = this.data;
+    const JWT_EXPIRATION = 60 * 60; // 1Hours时限
+    let cert = fs.readFileSync(path.join(__dirname, "./ssl_key/rsa_private_key.pem")); // 私钥加密Token
     let token = jwt.sign(
-      {data},
+      {
+        userid
+      },
       cert,
       {
         expiresIn: JWT_EXPIRATION,
