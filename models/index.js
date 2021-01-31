@@ -11,6 +11,7 @@ const { MusicSchema } = require('./MusicSchema')
 const { UserSchema } = require('./UserSchema')
 const { BackgroundSchema } = require('./BackgroundSchema')
 const { ArticleSchema } = require('./ArticleSchema')
+const { VideoSchema } = require('./VideoSchema')
 
 // ES6原生的Promise库
 mongoose.Promise = global.Promise;
@@ -29,3 +30,4 @@ exports.ArticleModel = mongoose.model('Article', ArticleSchema)
 exports.MusicModel = mongoose.model('Music', MusicSchema)
 exports.BackgroundModel = mongoose.model('Background', BackgroundSchema)
 exports.UserModel = mongoose.model('User', UserSchema)
+exports.VideoModel = mongoose.model('Video', VideoSchema)
