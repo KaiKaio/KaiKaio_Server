@@ -10,7 +10,7 @@ const { checkVarIsEmpty } = require('../util/common.js')
 module.exports =  (router) => {
   router.get('/api/Article', async (ctx, next) => {
     let results = {}
-    if(checkVarIsEmpty(ctx.request.query.id) === true) {
+    if(checkVarIsEmpty(ctx.request.query.id)) {
       results = await ArticleModel.find()
     } else {
       results = await ArticleModel.find({_id: ctx.request.query.id})

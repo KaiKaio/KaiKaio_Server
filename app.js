@@ -36,7 +36,7 @@ app.use(
   koajwt({
     secret: public_key,
   }).unless({
-    path: ["/api/Article", "/api/Background", "/api/Music", "/api/user/login"],
+    path: ["/api/Article", "/api/Background", "/api/Music", "/api/user/login", "/api/user/public_key"],
   })
 );
 
