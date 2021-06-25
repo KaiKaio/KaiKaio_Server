@@ -5,7 +5,7 @@
 */
 
 const { ArticleModel } = require('../models')
-const { checkVarIsEmpty } = require('../util/common.js')
+const { checkVarIsEmpty, getUserIp } = require('../util/common.js')
 
 module.exports =  (router) => {
   router.get('/api/Article', async (ctx, next) => {
