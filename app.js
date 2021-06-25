@@ -28,6 +28,8 @@ const public_key = fs.readFileSync(
 // error handler
 onerror(app);
 
+app.proxy = true;
+
 // 配置跨域
 app.use(corsMiddlewares());
 
