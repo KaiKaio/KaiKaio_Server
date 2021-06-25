@@ -10,4 +10,12 @@ const checkVarIsEmpty = (variable) => {
   }
 }
 
-exports.checkVarIsEmpty = checkVarIsEmpty
+const getUserIp = (req) => {
+  return req.headers['x-forwarded-for'] ||
+    req.connection.remoteAddress ||
+    req.socket.remoteAddress ||
+    req.connection.socket.remoteAddress;
+}
+
+exports.checkVarIsEmpty = checkVarIsEmpty;
+exports.getUserIp = getUserIp;
