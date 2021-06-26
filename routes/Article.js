@@ -9,11 +9,6 @@ const { checkVarIsEmpty } = require('../util/common.js')
 
 module.exports =  (router) => {
   router.get('/api/Article', async (ctx, next) => {
-
-    const req = ctx.req;
-
-    console.log(ip, 'ip')
-
     let results = {}
     if(checkVarIsEmpty(ctx.request.query.id)) {
       results = await ArticleModel.find()
