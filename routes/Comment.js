@@ -1,5 +1,7 @@
-const { CommentModel } = require('../models')
-const { getUserIp } = require('../util/common')
+const { CommentModel } = require('../models');
+const { getUserIp } = require('../util/common');
+const axios = require('axios');
+const { AMapKey } = require('../config/keyConfig')
 
 module.exports =  (router) => {
 
@@ -15,32 +17,38 @@ module.exports =  (router) => {
   });
 
   router.post('/api/Comment/Add', async (ctx, next) => {
-    const { agent, content } = ctx.request.body;
-
-    const req = ctx.req;
-
-    const ip = getUserIp(req);
-    console.log(ip, 'ip')
-    return;
-
-    const Comment = new CommentModel({
-      url: ctx.request.body.url,
-    })
-
-
-
     let code = 0;
     let msg = ''
+    const date = new Date();
     try {
-      await Comment.save();
+      const { agent, content, pid } = ctx.request.body;
+      const { req } = ctx;
+      const ip = getUserIp(req);
+      const { data: { status, province, city } } = await axios.get(`https://restapi.amap.com/v5/ip?key=${AMapKey}&type=4&ip=${ip}`);
+      if(status !== '1') {
+        throw new Error('地址获取失败');
+      }
+
+      const CommentItem = new CommentModel({
+        content,
+        agent,
+        pid,
+        ip_location: `${province} - ${city}`,
+        createDate: `${date.getFullYear().toString()}-${(date.getMonth() + 1).toString()}-${date.getDate().toString()}`,
+      });
+
+      await CommentItem.save();
       msg = '添加留言成功';
-    } catch (error) {
+
+    } catch (err) {
+      console.log(err);
       code = 1;
-      msg = '添加留言失败';
-    }
-    ctx.body = {
-      code: code,
-      msg: msg
+      msg = '添加留言失败： ->' + err;
+    } finally {
+      ctx.body = {
+        code,
+        msg,
+      }
     }
   })
 

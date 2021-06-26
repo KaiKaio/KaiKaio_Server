@@ -4,8 +4,9 @@ const mongoose = require('mongoose')
 const CommentSchema = new mongoose.Schema({
   content: { type: String, require: true }, // 内容
   createDate: { type: String, require: true }, // 创建时间
-  agent: { type: String, require: true }, // 用户设备信息
-  ip_location: { type: String, require: true }, // IP定位地址
+  agent: { type: String, require: false }, // 用户设备信息
+  ip_location: { type: String, require: false }, // IP定位地址
+  pid: { type: String, require: true },
 })
 
 module.exports = {

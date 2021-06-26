@@ -5,14 +5,13 @@
 */
 
 const { ArticleModel } = require('../models')
-const { checkVarIsEmpty, getUserIp } = require('../util/common.js')
+const { checkVarIsEmpty } = require('../util/common.js')
 
 module.exports =  (router) => {
   router.get('/api/Article', async (ctx, next) => {
 
     const req = ctx.req;
 
-    const ip = getUserIp(req);
     console.log(ip, 'ip')
 
     let results = {}
