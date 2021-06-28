@@ -9,7 +9,8 @@ const MusicSchema = new mongoose.Schema({
   createtime: { type: String, require: true },
   updatetime: { type: String, require: false },
   delname: { type: String, require: true },
-  albumart: { type: String, require: false }
+  albumart: { type: String, require: false },
+  sortIndex: { type: Number, require: true }, // 排序下标值
 })
 
 module.exports = {
