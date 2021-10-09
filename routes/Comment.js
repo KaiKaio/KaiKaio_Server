@@ -25,7 +25,11 @@ module.exports =  (router) => {
         agent,
         content,
         pid,
-        userName
+        userInfo: {
+          userName,
+          site,
+          email
+        }
       } = ctx.request.body;
       const { req } = ctx;
       const ip = getUserIp(req);
@@ -34,18 +38,30 @@ module.exports =  (router) => {
           status,
           province,
           city
-        }
+        },
+        data
       } = await axios.get(`https://restapi.amap.com/v5/ip?key=${AMapKey}&type=4&ip=${ip}`);
+
+      console.log(data)
       if(status !== '1') {
         throw new Error('地址获取失败');
+      }
+      
+      let ip_location = ''
+      if (province || city) {
+        ip_location = `${province} - ${city}`
+      } else {
+        ip_location = ''
       }
 
       const CommentItem = new CommentModel({
         content,
         agent,
         userName,
+        site,
+        email,
         pid,
-        ip_location: `${province} - ${city}`,
+        ip_location,
         createDate: `${date.getFullYear().toString()}-${(date.getMonth() + 1).toString()}-${date.getDate().toString()}`,
       });
 
