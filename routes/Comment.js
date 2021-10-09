@@ -25,11 +25,9 @@ module.exports =  (router) => {
         agent,
         content,
         pid,
-        userInfo: {
-          userName,
-          site,
-          email
-        }
+        userName,
+        site,
+        email
       } = ctx.request.body;
       const { req } = ctx;
       const ip = getUserIp(req);
