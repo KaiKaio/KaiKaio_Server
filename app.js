@@ -45,6 +45,7 @@ app.use(
       "/api/user/login",
       "/api/user/public_key",
       "/api/Comment",
+      "/api/fetchBingWallpaper",
     ],
   })
 );
