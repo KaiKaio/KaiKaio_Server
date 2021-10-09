@@ -1,4 +1,5 @@
 const { BackgroundModel } = require('../models')
+const axios = require('axios');
 
 module.exports =  (router) => {
   router.get('/api/Background', async (ctx, next) => {
@@ -48,4 +49,18 @@ module.exports =  (router) => {
       }
     })
   })
+
+  /**
+   * 获取 Bing 每日壁纸
+   */
+  router.get('/api/fetchBingWallpaper', async (ctx, next) => {
+    const res = await axios.get("http://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=5&mkt=zh-CN");
+    const responseImgs = res.data.images
+
+    ctx.body = {
+      code: 0,
+      msg: 'BingWallPaper Search Success ~',
+      data: responseImgs
+    }
+  });
 }
