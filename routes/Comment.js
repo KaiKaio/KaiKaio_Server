@@ -19,6 +19,8 @@ module.exports =  (router) => {
   router.post('/api/Comment/Add', async (ctx, next) => {
     let code = 0;
     let msg = ''
+    let result = null
+
     const date = new Date();
     try {
       const {
@@ -63,7 +65,7 @@ module.exports =  (router) => {
         createDate: `${date.getFullYear().toString()}-${(date.getMonth() + 1).toString()}-${date.getDate().toString()}`,
       });
 
-      await CommentItem.save();
+      result = await CommentItem.save();
       msg = '添加留言成功';
 
     } catch (err) {
@@ -73,6 +75,7 @@ module.exports =  (router) => {
     } finally {
       ctx.body = {
         code,
+        result,
         msg,
       }
     }
