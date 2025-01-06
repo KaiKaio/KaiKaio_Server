@@ -32,7 +32,7 @@ module.exports =  (router) => {
         throw new Error('密码错误')
       }
 
-      // 登陆成功，添加token验证
+      // 登录成功，添加token验证
       const _id = resultUser._id;
       // 将用户id传入并生成token
       const jwt = new JwtUtil(_id);
@@ -41,7 +41,7 @@ module.exports =  (router) => {
       ctx.status = 200
       ctx.body = {
         code: 0,
-        msg: '登陆成功',
+        msg: '登录成功',
         token: token
       }
 
@@ -50,6 +50,10 @@ module.exports =  (router) => {
       console.log(e)
       next(e)
     }
+  });
+
+  router.post('/api/user/register', async (ctx, next) => {
+
   });
 
   router.get('/api/user/verifyToken', async (ctx, next) => {
