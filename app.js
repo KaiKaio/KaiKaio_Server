@@ -4,6 +4,7 @@ const Koa = require("koa");
 const Router = require("koa-router");
 const app = new Koa();
 const router = new Router();
+const dotenv = require('dotenv');
 
 const views = require("koa-views");
 const co = require("co");
@@ -39,6 +40,9 @@ app.use(
     secret: public_key,
   }).unless({
     path: [
+      "/api/listBuckets",
+      "/css/style.css",
+      "/",
       "/api/Article",
       "/api/Background",
       "/api/Music",
@@ -81,6 +85,11 @@ app
 app.on("error", function (err, ctx) {
   console.log(err, ' ==> 服务报错原因');
 });
+console.log(`./.env.${process.env.NODE_ENV}`, 'ssssssssaa')
+// 根据NODE_ENV加载不同的.env文件
+dotenv.config({ path: `./.env.${process.env.NODE_ENV}` });
+
+console.log(process.env.OSS_ACCESS_KEY_ID, 'ssssssssaa')
 
 module.exports = app.listen(config.port, () => {
   console.log(`Listening on http://localhost:${config.port}`);

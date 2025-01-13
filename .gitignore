@@ -1,3 +1,4 @@
 node_modules
 config/keyConfig.js
 util/ssl_key/
+.env.development
