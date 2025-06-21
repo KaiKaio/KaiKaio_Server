@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "NODE_ENV=development nodemon app.js"
   },
   "dependencies": {
+    "ali-oss": "^6.22.0",
     "axios": "^0.21.1",
     "crypto": "^1.0.1",
     "debug": "~2.6.8",
+    "dotenv": "^16.4.7",
     "ejs": "~2.5.5",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.3.0",
