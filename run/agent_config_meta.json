@@ -1,0 +1,277 @@
+{
+  "session": {
+    "maxAge": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-session\\config\\config.default.js",
+    "key": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-session\\config\\config.default.js",
+    "httpOnly": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-session\\config\\config.default.js",
+    "encrypt": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-session\\config\\config.default.js",
+    "logValue": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-session\\config\\config.default.js"
+  },
+  "security": {
+    "domainWhiteList": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+    "protocolWhiteList": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+    "defaultMiddleware": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+    "csrf": {
+      "enable": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "type": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "ignoreJSON": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "useSession": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "cookieName": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "sessionName": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "headerName": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "bodyName": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "queryName": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "supportedRequests": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "refererWhiteList": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "xframe": {
+      "enable": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "value": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "hsts": {
+      "enable": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "maxAge": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "includeSubdomains": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "dta": {
+      "enable": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "noopen": {
+      "enable": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "nosniff": {
+      "enable": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "value": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "xssProtection": {
+      "enable": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "value": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "csp": {
+      "enable": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "policy": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "ipExceptionList": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js",
+      "checkAddress": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js"
+    }
+  },
+  "helper": {
+    "shtml": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-security\\config\\config.default.js"
+  },
+  "jsonp": {
+    "limit": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-jsonp\\config\\config.default.js",
+    "callback": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-jsonp\\config\\config.default.js",
+    "csrf": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-jsonp\\config\\config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-onerror\\config\\config.default.js",
+    "appErrorFilter": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-onerror\\config\\config.default.js",
+    "templatePath": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-onerror\\config\\config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-i18n\\config\\config.default.js",
+    "dirs": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-i18n\\config\\config.default.js",
+    "queryField": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-i18n\\config\\config.default.js",
+    "cookieField": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-i18n\\config\\config.default.js",
+    "cookieDomain": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-i18n\\config\\config.default.js",
+    "cookieMaxAge": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-i18n\\config\\config.default.js"
+  },
+  "watcher": {
+    "type": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-watcher\\config\\config.default.js",
+    "eventSources": {
+      "default": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-watcher\\config\\config.default.js",
+      "development": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-watcher\\config\\config.default.js"
+    }
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-schedule\\config\\config.default.js",
+      "file": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-schedule\\config\\config.default.js"
+    }
+  },
+  "schedule": {
+    "directory": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-schedule\\config\\config.default.js"
+  },
+  "multipart": {
+    "mode": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "autoFields": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "defaultCharset": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fieldNameSize": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fieldSize": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fields": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fileSize": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "files": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fileExtensions": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "whitelist": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "allowArrayField": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "tmpdir": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "cleanSchedule": {
+      "cron": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-multipart\\config\\config.default.js",
+      "disable": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-multipart\\config\\config.default.js"
+    }
+  },
+  "logrotator": {
+    "filesRotateByHour": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "hourDelimiter": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "filesRotateBySize": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxFileSize": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxFiles": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "rotateDuration": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxDays": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-logrotator\\config\\config.default.js"
+  },
+  "static": {
+    "prefix": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-static\\config\\config.default.js",
+    "dir": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-static\\config\\config.default.js",
+    "dynamic": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-static\\config\\config.default.js",
+    "preload": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-static\\config\\config.default.js",
+    "buffer": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-static\\config\\config.prod.js",
+    "maxFiles": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-static\\config\\config.default.js",
+    "maxAge": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-static\\config\\config.prod.js"
+  },
+  "view": {
+    "root": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-view\\config\\config.default.js",
+    "cache": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-view\\config\\config.default.js",
+    "defaultExtension": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-view\\config\\config.default.js",
+    "defaultViewEngine": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-view\\config\\config.default.js",
+    "mapping": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg-view\\config\\config.default.js"
+  },
+  "env": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+  "name": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+  "keys": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+  "cookies": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+  "proxy": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+  "maxIpsCount": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+  "maxProxyCount": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+  "protocolHeaders": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+  "ipHeaders": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+  "hostHeaders": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+  "pkg": {
+    "name": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "version": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "private": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "scripts": {
+      "start": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "dev": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js"
+    },
+    "dependencies": {
+      "axios": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "crypto": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "debug": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "ejs": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "jsonwebtoken": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "koa": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "koa-bodyparser": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "koa-convert": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "koa-json": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "koa-jwt": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "koa-logger": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "koa-onerror": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "koa-router": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "koa-static": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "koa-views": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "mongoose": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js"
+    },
+    "devDependencies": {
+      "babel-eslint": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "eslint": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "nodemon": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "baseDir": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+  "HOME": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+  "rundir": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+  "dump": {
+    "ignore": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "notFound": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "sitefile": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "middlewares": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "httpClient": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "cacheControl": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js"
+  },
+  "bodyParser": {
+    "enable": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "encoding": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "formLimit": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "jsonLimit": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "textLimit": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "strict": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "queryString": {
+      "arrayLimit": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "depth": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "parameterLimit": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js"
+    },
+    "onerror": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js"
+  },
+  "logger": {
+    "dir": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "encoding": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "env": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "level": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "consoleLevel": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "disableConsoleAfterReady": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "outputJSON": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "buffer": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "appLogName": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "coreLogName": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "agentLogName": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "errorLogName": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "coreLogger": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "allowDebugAtProd": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "enablePerformanceTimer": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "dnsCacheLookupInterval": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "dnsCacheMaxLength": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "request": {
+      "timeout": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "freeSocketTimeout": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "maxSockets": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "maxFreeSockets": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "freeSocketTimeout": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "maxSockets": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "maxFreeSockets": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "logging": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js"
+  },
+  "coreMiddleware": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+  "workerStartTimeout": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+  "serverTimeout": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "port": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+      "hostname": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "clusterClient": {
+    "maxWaitTime": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js",
+    "responseTimeout": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js"
+  },
+  "onClientError": "D:\\Code\\kaikaio-booking-server\\node_modules\\egg\\config\\config.default.js"
+}

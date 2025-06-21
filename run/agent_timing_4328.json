@@ -1,0 +1,298 @@
+[
+  {
+    "name": "Process Start",
+    "start": 1749649403117,
+    "end": 1749649403733,
+    "duration": 616,
+    "pid": 4328,
+    "index": 0
+  },
+  {
+    "name": "Application Start",
+    "start": 1749649403734,
+    "end": 1749649403949,
+    "duration": 215,
+    "pid": 4328,
+    "index": 1
+  },
+  {
+    "name": "Load Plugin",
+    "start": 1749649403744,
+    "end": 1749649403763,
+    "duration": 19,
+    "pid": 4328,
+    "index": 2
+  },
+  {
+    "name": "Load Config",
+    "start": 1749649403763,
+    "end": 1749649403777,
+    "duration": 14,
+    "pid": 4328,
+    "index": 3
+  },
+  {
+    "name": "Require(0) D:/Code/kaikaio-booking-server/node_modules/egg-session/config/config.default.js",
+    "start": 1749649403764,
+    "end": 1749649403765,
+    "duration": 1,
+    "pid": 4328,
+    "index": 4
+  },
+  {
+    "name": "Require(1) D:/Code/kaikaio-booking-server/node_modules/egg-security/config/config.default.js",
+    "start": 1749649403765,
+    "end": 1749649403766,
+    "duration": 1,
+    "pid": 4328,
+    "index": 5
+  },
+  {
+    "name": "Require(2) D:/Code/kaikaio-booking-server/node_modules/egg-jsonp/config/config.default.js",
+    "start": 1749649403767,
+    "end": 1749649403767,
+    "duration": 0,
+    "pid": 4328,
+    "index": 6
+  },
+  {
+    "name": "Require(3) D:/Code/kaikaio-booking-server/node_modules/egg-onerror/config/config.default.js",
+    "start": 1749649403768,
+    "end": 1749649403768,
+    "duration": 0,
+    "pid": 4328,
+    "index": 7
+  },
+  {
+    "name": "Require(4) D:/Code/kaikaio-booking-server/node_modules/egg-i18n/config/config.default.js",
+    "start": 1749649403768,
+    "end": 1749649403769,
+    "duration": 1,
+    "pid": 4328,
+    "index": 8
+  },
+  {
+    "name": "Require(5) D:/Code/kaikaio-booking-server/node_modules/egg-watcher/config/config.default.js",
+    "start": 1749649403769,
+    "end": 1749649403770,
+    "duration": 1,
+    "pid": 4328,
+    "index": 9
+  },
+  {
+    "name": "Require(6) D:/Code/kaikaio-booking-server/node_modules/egg-schedule/config/config.default.js",
+    "start": 1749649403770,
+    "end": 1749649403770,
+    "duration": 0,
+    "pid": 4328,
+    "index": 10
+  },
+  {
+    "name": "Require(7) D:/Code/kaikaio-booking-server/node_modules/egg-multipart/config/config.default.js",
+    "start": 1749649403771,
+    "end": 1749649403771,
+    "duration": 0,
+    "pid": 4328,
+    "index": 11
+  },
+  {
+    "name": "Require(8) D:/Code/kaikaio-booking-server/node_modules/egg-logrotator/config/config.default.js",
+    "start": 1749649403772,
+    "end": 1749649403772,
+    "duration": 0,
+    "pid": 4328,
+    "index": 12
+  },
+  {
+    "name": "Require(9) D:/Code/kaikaio-booking-server/node_modules/egg-static/config/config.default.js",
+    "start": 1749649403772,
+    "end": 1749649403773,
+    "duration": 1,
+    "pid": 4328,
+    "index": 13
+  },
+  {
+    "name": "Require(10) D:/Code/kaikaio-booking-server/node_modules/egg-view/config/config.default.js",
+    "start": 1749649403773,
+    "end": 1749649403773,
+    "duration": 0,
+    "pid": 4328,
+    "index": 14
+  },
+  {
+    "name": "Require(11) D:/Code/kaikaio-booking-server/node_modules/egg/config/config.default.js",
+    "start": 1749649403774,
+    "end": 1749649403774,
+    "duration": 0,
+    "pid": 4328,
+    "index": 15
+  },
+  {
+    "name": "Require(12) D:/Code/kaikaio-booking-server/node_modules/egg-static/config/config.prod.js",
+    "start": 1749649403777,
+    "end": 1749649403777,
+    "duration": 0,
+    "pid": 4328,
+    "index": 16
+  },
+  {
+    "name": "Load extend/agent.js",
+    "start": 1749649403779,
+    "end": 1749649403825,
+    "duration": 46,
+    "pid": 4328,
+    "index": 17
+  },
+  {
+    "name": "Require(13) D:/Code/kaikaio-booking-server/node_modules/egg-security/app/extend/agent.js",
+    "start": 1749649403780,
+    "end": 1749649403780,
+    "duration": 0,
+    "pid": 4328,
+    "index": 18
+  },
+  {
+    "name": "Require(14) D:/Code/kaikaio-booking-server/node_modules/egg-schedule/app/extend/agent.js",
+    "start": 1749649403781,
+    "end": 1749649403822,
+    "duration": 41,
+    "pid": 4328,
+    "index": 19
+  },
+  {
+    "name": "Require(15) D:/Code/kaikaio-booking-server/node_modules/egg-logrotator/app/extend/agent.js",
+    "start": 1749649403822,
+    "end": 1749649403823,
+    "duration": 1,
+    "pid": 4328,
+    "index": 20
+  },
+  {
+    "name": "Load extend/context.js",
+    "start": 1749649403825,
+    "end": 1749649403885,
+    "duration": 60,
+    "pid": 4328,
+    "index": 21
+  },
+  {
+    "name": "Require(16) D:/Code/kaikaio-booking-server/node_modules/egg-security/app/extend/context.js",
+    "start": 1749649403825,
+    "end": 1749649403836,
+    "duration": 11,
+    "pid": 4328,
+    "index": 22
+  },
+  {
+    "name": "Require(17) D:/Code/kaikaio-booking-server/node_modules/egg-jsonp/app/extend/context.js",
+    "start": 1749649403836,
+    "end": 1749649403838,
+    "duration": 2,
+    "pid": 4328,
+    "index": 23
+  },
+  {
+    "name": "Require(18) D:/Code/kaikaio-booking-server/node_modules/egg-i18n/app/extend/context.js",
+    "start": 1749649403839,
+    "end": 1749649403839,
+    "duration": 0,
+    "pid": 4328,
+    "index": 24
+  },
+  {
+    "name": "Require(19) D:/Code/kaikaio-booking-server/node_modules/egg-multipart/app/extend/context.js",
+    "start": 1749649403839,
+    "end": 1749649403880,
+    "duration": 41,
+    "pid": 4328,
+    "index": 25
+  },
+  {
+    "name": "Require(20) D:/Code/kaikaio-booking-server/node_modules/egg-view/app/extend/context.js",
+    "start": 1749649403881,
+    "end": 1749649403882,
+    "duration": 1,
+    "pid": 4328,
+    "index": 26
+  },
+  {
+    "name": "Require(21) D:/Code/kaikaio-booking-server/node_modules/egg/app/extend/context.js",
+    "start": 1749649403882,
+    "end": 1749649403883,
+    "duration": 1,
+    "pid": 4328,
+    "index": 27
+  },
+  {
+    "name": "Load agent.js",
+    "start": 1749649403885,
+    "end": 1749649403894,
+    "duration": 9,
+    "pid": 4328,
+    "index": 28
+  },
+  {
+    "name": "Require(22) D:/Code/kaikaio-booking-server/node_modules/egg-security/agent.js",
+    "start": 1749649403885,
+    "end": 1749649403886,
+    "duration": 1,
+    "pid": 4328,
+    "index": 29
+  },
+  {
+    "name": "Require(23) D:/Code/kaikaio-booking-server/node_modules/egg-onerror/agent.js",
+    "start": 1749649403886,
+    "end": 1749649403886,
+    "duration": 0,
+    "pid": 4328,
+    "index": 30
+  },
+  {
+    "name": "Require(24) D:/Code/kaikaio-booking-server/node_modules/egg-watcher/agent.js",
+    "start": 1749649403886,
+    "end": 1749649403891,
+    "duration": 5,
+    "pid": 4328,
+    "index": 31
+  },
+  {
+    "name": "Require(25) D:/Code/kaikaio-booking-server/node_modules/egg-schedule/agent.js",
+    "start": 1749649403891,
+    "end": 1749649403892,
+    "duration": 1,
+    "pid": 4328,
+    "index": 32
+  },
+  {
+    "name": "Require(26) D:/Code/kaikaio-booking-server/node_modules/egg-logrotator/agent.js",
+    "start": 1749649403892,
+    "end": 1749649403893,
+    "duration": 1,
+    "pid": 4328,
+    "index": 33
+  },
+  {
+    "name": "Require(27) D:/Code/kaikaio-booking-server/node_modules/egg/agent.js",
+    "start": 1749649403893,
+    "end": 1749649403893,
+    "duration": 0,
+    "pid": 4328,
+    "index": 34
+  },
+  {
+    "name": "Before Start in D:/Code/kaikaio-booking-server/node_modules/egg-watcher/lib/init.js:15:14",
+    "start": 1749649403901,
+    "end": 1749649403947,
+    "duration": 46,
+    "pid": 4328,
+    "index": 35
+  },
+  {
+    "name": "Before Start in D:/Code/kaikaio-booking-server/node_modules/egg-schedule/agent.js:12:9",
+    "start": 1749649403902,
+    "end": 1749649403944,
+    "duration": 42,
+    "pid": 4328,
+    "index": 36
+  }
+]
