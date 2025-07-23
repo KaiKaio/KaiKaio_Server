@@ -45,10 +45,13 @@ module.exports =  (router) => {
         token: token
       }
 
-    } catch (e) {
+    } catch (error) {
       ctx.status = 401;
-      console.log(e)
-      next(e)
+      ctx.body = {
+        code: 401,
+        msg: '登录失败'
+      }
+      next(error)
     }
   });
 

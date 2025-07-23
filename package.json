@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "set NODE_ENV=production && node app.js",
-    "dev": "set NODE_ENV=development && nodemon app.js"
+    "start": "set NODE_ENV=production && node --security-revert=CVE-2023-46809 app.js",
+    "dev": "set NODE_ENV=development && nodemon --security-revert=CVE-2023-46809 app.js"
   },
   "dependencies": {
     "ali-oss": "^6.22.0",

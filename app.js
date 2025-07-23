@@ -40,6 +40,7 @@ app.use(
     secret: public_key,
   }).unless({
     path: [
+      "/favicon.ico",
       "/api/listBuckets",
       "/css/style.css",
       "/",
@@ -91,6 +92,6 @@ dotenv.config({ path: `./.env.${process.env.NODE_ENV}` });
 
 console.log(process.env.OSS_ACCESS_KEY_ID, 'ssssssssaa')
 
-module.exports = app.listen(config.port, () => {
-  console.log(`Listening on http://localhost:${config.port}`);
+module.exports = app.listen(config.port, '0.0.0.0', () => {
+  console.log(`Listening on http://0.0.0.0:${config.port}`);
 });
