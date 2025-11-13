@@ -22,9 +22,10 @@ const corsMiddlewares = require("./middlewares/cors-middlewares");
 const config = require("./config");
 const routes = require("./routes");
 
-const public_key = fs.readFileSync(
-  path.join(__dirname, "./util/ssl_key/rsa_public_key.pem")
-);
+const keyPath = path.join(__dirname, "./util/ssl_key/rsa_public_key.pem")
+const public_key = fs.existsSync(keyPath)
+  ? fs.readFileSync(keyPath)
+  : process.env.JWT_PUBLIC_KEY || ''
 
 // error handler
 onerror(app);
@@ -86,11 +87,8 @@ app
 app.on("error", function (err, ctx) {
   console.log(err, ' ==> 服务报错原因');
 });
-console.log(`./.env.${process.env.NODE_ENV}`, 'ssssssssaa')
 // 根据NODE_ENV加载不同的.env文件
 dotenv.config({ path: `./.env.${process.env.NODE_ENV}` });
-
-console.log(process.env.OSS_ACCESS_KEY_ID, 'ssssssssaa')
 
 module.exports = app.listen(config.port, '0.0.0.0', () => {
   console.log(`Listening on http://0.0.0.0:${config.port}`);

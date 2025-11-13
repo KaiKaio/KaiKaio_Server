@@ -46,6 +46,7 @@ module.exports =  (router) => {
       }
 
     } catch (error) {
+      console.log(error, '登录失败原因')
       ctx.status = 401;
       ctx.body = {
         code: 401,
