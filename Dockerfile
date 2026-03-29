@@ -10,4 +10,4 @@ HEALTHCHECK CMD node -e "var http=require('http');var req=http.request({host:'lo
 CMD ["pm2-runtime", "ecosystem.config.js"]
 
 # docker build -t kaikaio-server:latest .
-# docker run -e MONGO_URI="host.docker.internal:27017/KaiKaiBlog" -p 4000:4000 kaikaio-server:latest
+# docker run -d --name kaikaio-server -e MONGO_URI="host.docker.internal:27017/KaiKaiBlog" -p 4000:4000 kaikaio-server:latest
