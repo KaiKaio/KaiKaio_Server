@@ -45,6 +45,7 @@ app.use(
       "/api/listBuckets",
       "/css/style.css",
       "/",
+      "/api/user/register",
       "/api/Article",
       "/api/Background",
       "/api/Music",
