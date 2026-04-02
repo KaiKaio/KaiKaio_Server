@@ -93,6 +93,44 @@ module.exports =  (router) => {
     }
   });
 
+  router.post('/api/user/changePassword', async (ctx, next) => {
+    try {
+      const { oldPassword, newPassword } = ctx.request.body;
+      const userid = ctx.state.user.userid;
+
+      const resultUser = await UserModel.findById(userid).exec();
+      if(resultUser === null) {
+        throw new Error('该用户未存在')
+      }
+
+      const clientPass = privateDecrypt(oldPassword)
+      const serverPass = privateDecrypt(resultUser.password)
+
+      if(!(clientPass.toString() === serverPass.toString())){
+        throw new Error('旧密码错误')
+      }
+
+      // 更新为新密码
+      resultUser.password = newPassword;
+      await resultUser.save();
+
+      ctx.status = 200
+      ctx.body = {
+        code: 0,
+        msg: '修改密码成功'
+      }
+
+    } catch (error) {
+      console.log(error, '修改密码失败原因')
+      ctx.status = 400;
+      ctx.body = {
+        code: 400,
+        msg: error.message || '修改密码失败'
+      }
+      next(error)
+    }
+  });
+
   router.get('/api/user/verifyToken', async (ctx, next) => {
     try {
       ctx.status = 200
