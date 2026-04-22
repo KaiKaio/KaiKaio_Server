@@ -1,7 +1,7 @@
 services:
-  KaiKaio_Server:
-    image: kaikaioano/KaiKaio_Server:branch-master
-    container_name: KaiKaio_Server
+  kaikaio-server:
+    image: kaikaioano/kaikaio-server:branch-master
+    container_name: kaikaio-server
     ports:
       - "4000:4000"
     volumes:
