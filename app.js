@@ -1,10 +1,15 @@
 const fs = require("fs");
+const dotenv = require('dotenv');
+
+// 根据NODE_ENV加载不同的.env文件，必须在最前面加载
+// 如果指定了NODE_ENV则加载对应的.env文件，否则加载默认的.env文件
+const envPath = process.env.NODE_ENV ? `./.env.${process.env.NODE_ENV}` : './.env';
+dotenv.config({ path: envPath });
 
 const Koa = require("koa");
 const Router = require("koa-router");
 const app = new Koa();
 const router = new Router();
-const dotenv = require('dotenv');
 
 const views = require("koa-views");
 const co = require("co");
@@ -25,7 +30,7 @@ const routes = require("./routes");
 const keyPath = path.join(__dirname, "./util/ssl_key/rsa_public_key.pem")
 const public_key = fs.existsSync(keyPath)
   ? fs.readFileSync(keyPath)
-  : process.env.JWT_PUBLIC_KEY || ''
+  : (process.env.JWT_PUBLIC_KEY ? process.env.JWT_PUBLIC_KEY.replace(/\\n/g, '\n') : '')
 
 // error handler
 onerror(app);
@@ -88,8 +93,6 @@ app
 app.on("error", function (err, ctx) {
   console.log(err, ' ==> 服务报错原因');
 });
-// 根据NODE_ENV加载不同的.env文件
-dotenv.config({ path: `./.env.${process.env.NODE_ENV}` });
 
 module.exports = app.listen(config.port, '0.0.0.0', () => {
   console.log(`Listening on http://0.0.0.0:${config.port}`);
