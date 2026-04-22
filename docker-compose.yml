@@ -1,0 +1,15 @@
+services:
+  KaiKaio_Server:
+    image: kaikaioano/KaiKaio_Server:branch-master
+    container_name: KaiKaio_Server
+    ports:
+      - "4000:4000"
+    volumes:
+      - F:/Kaikaio_Booking_Server_Files:/app/app/public/upload
+    env_file:
+      - .env
+    environment:
+      - PORT=4000
+      - MONGO_URI=host.docker.internal:27017/KaiKaiBlog
+    restart: unless-stopped
+    mem_limit: 512m
