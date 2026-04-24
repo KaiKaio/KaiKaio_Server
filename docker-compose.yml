@@ -1,6 +1,7 @@
 services:
   kaikaio-server:
     image: kaikaioano/kaikaio-server:branch-master
+    # image: kaikaio-server:latest
     container_name: kaikaio-server
     ports:
       - "4000:4000"

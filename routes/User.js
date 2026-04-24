@@ -11,11 +11,9 @@ const { privateDecrypt } = require('../util/encryp.js')
 // 引入jwt token工具
 const JwtUtil = require('../util/jwt.js');
 
-// 优先从环境变量读取公钥，如果环境变量不存在则尝试读取文件
-const keyPath = path.join(__dirname, "../util/ssl_key/rsa_public_key.pem");
-const public_key = process.env.JWT_PUBLIC_KEY
-  ? process.env.JWT_PUBLIC_KEY.replace(/\\n/g, '\n')
-  : (fs.existsSync(keyPath) ? fs.readFileSync(keyPath, 'utf-8') : '');
+// const keyPath = path.join(__dirname, "./util/ssl_key/rsa_public_key.pem")
+const public_key = process.env.JWT_PUBLIC_KEY ? process.env.JWT_PUBLIC_KEY.replace(/\\n/g, '\n') : ''
+
 
 module.exports =  (router) => {
   router.post('/api/user/login', async (ctx, next) => {

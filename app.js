@@ -27,10 +27,8 @@ const corsMiddlewares = require("./middlewares/cors-middlewares");
 const config = require("./config");
 const routes = require("./routes");
 
-const keyPath = path.join(__dirname, "./util/ssl_key/rsa_public_key.pem")
-const public_key = fs.existsSync(keyPath)
-  ? fs.readFileSync(keyPath)
-  : (process.env.JWT_PUBLIC_KEY ? process.env.JWT_PUBLIC_KEY.replace(/\\n/g, '\n') : '')
+// const keyPath = path.join(__dirname, "./util/ssl_key/rsa_public_key.pem")
+const public_key = process.env.JWT_PUBLIC_KEY ? process.env.JWT_PUBLIC_KEY.replace(/\\n/g, '\n') : ''
 
 // error handler
 onerror(app);
