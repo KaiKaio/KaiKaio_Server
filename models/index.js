@@ -5,7 +5,7 @@
 */
 
 const mongoose = require('mongoose')
-const { mongoKey } = require('../config/keyConfig')
+const mongoKey = process.env.MONGO_KEY
 
 const { MusicSchema } = require('./MusicSchema')
 const { UserSchema } = require('./UserSchema')

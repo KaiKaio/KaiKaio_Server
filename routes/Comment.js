@@ -1,7 +1,7 @@
 const { CommentModel } = require('../models');
 const { getUserIp } = require('../util/common');
 const axios = require('axios');
-const { AMapKey } = require('../config/keyConfig')
+const AMapKey = process.env.AMAP_KEY
 
 module.exports =  (router) => {
 
