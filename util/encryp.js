@@ -5,15 +5,13 @@
  * @author KaiKaio <https://github.com/KaiKaio>
 */
 
-const path = require('path');
-const fs = require('fs');
 const crypto = require('crypto');
 
 /**
  * 私钥解密
  */
 const privateDecrypt = (password) => {
-  const private_key = fs.readFileSync(path.resolve(__dirname, './ssl_key/rsa_private_key.pem'));
+  const private_key = process.env.JWT_PRIVATE_KEY.replace(/\\n/g, '\n');
 
   const result = crypto.privateDecrypt({
     key: private_key,
