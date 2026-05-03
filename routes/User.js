@@ -28,6 +28,11 @@ module.exports =  (router) => {
       const clientPass = privateDecrypt(password)
       const serverPass = privateDecrypt(resultUser.password)
 
+      console.log({
+        clientPass,
+        serverPass,
+      }, 'clientPass-serverPass')
+
       if(!(clientPass.toString() === serverPass.toString())){
         throw new Error('密码错误')
       }

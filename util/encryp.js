@@ -12,7 +12,7 @@ const crypto = require('crypto');
  */
 const privateDecrypt = (password) => {
   const private_key = process.env.JWT_PRIVATE_KEY.replace(/\\n/g, '\n');
-
+  console.log(private_key, '=> private_key')
   const result = crypto.privateDecrypt({
     key: private_key,
     padding: crypto.constants.RSA_PKCS1_PADDING,
