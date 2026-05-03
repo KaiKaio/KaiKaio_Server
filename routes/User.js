@@ -29,8 +29,8 @@ module.exports =  (router) => {
       const serverPass = privateDecrypt(resultUser.password)
 
       console.log({
-        clientPass,
-        serverPass,
+        clientPassStr: clientPass.toString(),
+        serverPassStr: serverPass.toString(),
       }, 'clientPass-serverPass')
 
       if(!(clientPass.toString() === serverPass.toString())){
