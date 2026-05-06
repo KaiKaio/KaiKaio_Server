@@ -4,7 +4,13 @@ const dotenv = require('dotenv');
 // 根据NODE_ENV加载不同的.env文件，必须在最前面加载
 // 如果指定了NODE_ENV则加载对应的.env文件，否则加载默认的.env文件
 const envPath = process.env.NODE_ENV ? `./.env.${process.env.NODE_ENV}` : './.env';
-dotenv.config({ path: envPath });
+
+dotenv.config({
+  path: envPath,
+  // debug: true,
+  encoding: 'utf8',
+  // override: true
+});
 
 const Koa = require("koa");
 const Router = require("koa-router");
