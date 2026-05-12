@@ -11,7 +11,7 @@ module.exports =  (router) => {
   router.get('/api/Article', async (ctx, next) => {
     let results = {}
     if(checkVarIsEmpty(ctx.request.query.id)) {
-      results = await ArticleModel.find()
+      results = await ArticleModel.find().select('-content').sort({ createtime: -1 })
     } else {
       results = await ArticleModel.find({_id: ctx.request.query.id})
     }
