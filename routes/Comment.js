@@ -24,7 +24,6 @@ module.exports =  (router) => {
     const date = new Date();
     try {
       const {
-        agent,
         content,
         pid,
         userName,
@@ -32,26 +31,35 @@ module.exports =  (router) => {
         email
       } = ctx.request.body;
       const { req } = ctx;
+      const agent = ctx.get('user-agent') || ctx.request.headers['user-agent'] || '';
       const ip = getUserIp(req);
       const {
         data: {
           status,
+          info,
           province,
-          city
+          district,
+          country
         },
         data
       } = await axios.get(`https://restapi.amap.com/v5/ip?key=${AMapKey}&type=4&ip=${ip}`);
 
       console.log(data)
-      if(status !== '1') {
+      if(status !== '1' || info !== 'OK') {
         throw new Error('地址获取失败');
       }
       
       let ip_location = ''
-      if (province || city) {
-        ip_location = `${province} - ${city}`
-      } else {
-        ip_location = ''
+      if (province) {
+        ip_location = `${province}`
+      } 
+      
+      if (country) {
+        ip_location = ip_location + ` - ${country}`
+      }
+   
+      if (district) {
+        ip_location = ip_location + ` - ${district}`
       }
 
       const CommentItem = new CommentModel({
