@@ -27,7 +27,7 @@ module.exports =  (router) => {
 
   router.post('/api/Article/Add', async (ctx, next) => {
     let date = new Date();
-    let dateFormat = `${date.getFullYear().toString()}-${(date.getMonth() + 1).toString()}-${date.getDate().toString()}`
+    let dateFormat = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
 
 
     let code = 0;
@@ -57,7 +57,7 @@ module.exports =  (router) => {
     let code = 0;
     let msg = '修改成功啦~'
     let date = new Date();
-    let dateFormat = `${date.getFullYear().toString()}-${(date.getMonth() + 1).toString()}-${date.getDate().toString()}`
+    let dateFormat = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
     await ArticleModel.updateOne({_id: ctx.request.body.id}, {
       $set: {
         title: ctx.request.body.title,
