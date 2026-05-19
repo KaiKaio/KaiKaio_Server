@@ -56,6 +56,7 @@ app.use(
       "/",
       "/api/user/register",
       "/api/Article",
+      "/api/Article/",
       "/api/Background",
       "/api/Music",
       "/api/user/login",
