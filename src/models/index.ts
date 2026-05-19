@@ -24,7 +24,7 @@ mongoose.connection.on('error', (error: Error) => {
 });
 
 mongoose.connection.on('open', () => {
-  console.log('DB数据库连接成功');
+  console.log('DB数据库连接打开');
 });
 
 export const ArticleModel = mongoose.model('Article', ArticleSchema);

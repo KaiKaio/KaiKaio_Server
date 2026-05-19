@@ -1,9 +1,17 @@
 import dotenv from 'dotenv';
+
+const envPath = process.env.NODE_ENV ? `./.env.${process.env.NODE_ENV}` : './.env';
+
+dotenv.config({
+  path: envPath,
+  encoding: 'utf8',
+});
+
 import Koa from 'koa';
 import Router from '@koa/router';
 import views from '@ladjs/koa-views';
 import json from 'koa-json';
-import onerror from 'koa-onerror';
+import { onerror } from 'koa-onerror';
 import bodyparser from 'koa-bodyparser';
 import logger from 'koa-logger';
 import koajwt from 'koa-jwt';
@@ -14,13 +22,6 @@ import corsMiddleware from './middlewares/cors-middlewares';
 import config from './config';
 import routes from './routes';
 
-const envPath = process.env.NODE_ENV ? `./.env.${process.env.NODE_ENV}` : './.env';
-
-dotenv.config({
-  path: envPath,
-  encoding: 'utf8',
-});
-
 const app = new Koa();
 const router = new Router();
 
@@ -28,7 +29,6 @@ const publicKey = process.env.JWT_PUBLIC_KEY
   ? process.env.JWT_PUBLIC_KEY.replace(/\\n/g, '\n')
   : '';
 
-// @ts-expect-error koa-onerror type issue
 onerror(app);
 
 app.proxy = true;
