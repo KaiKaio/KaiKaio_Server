@@ -1,18 +1,17 @@
 import crypto from 'crypto';
 
 /**
- * 私钥解密
+ * 私钥解密 - 使用 OAEP padding
  */
 export const privateDecrypt = (password: string): Buffer => {
   const privateKey = process.env.JWT_PRIVATE_KEY?.replace(/\\n/g, '\n') || '';
-  console.log(privateKey, '=> private_key');
-  const result = crypto.privateDecrypt(
+  const buffer = Buffer.from(password, 'base64');
+
+  return crypto.privateDecrypt(
     {
       key: privateKey,
-      padding: crypto.constants.RSA_PKCS1_PADDING,
+      padding: crypto.constants.RSA_PKCS1_OAEP_PADDING,
     },
-    Buffer.from(password, 'base64')
+    buffer
   );
-
-  return result;
 };

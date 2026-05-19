@@ -3,3 +3,4 @@ config/keyConfig.js
 util/ssl_key/
 .env.development
 .env
+/dist
