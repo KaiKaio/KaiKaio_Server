@@ -11,13 +11,12 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\"",
     "typecheck": "tsc --noEmit",
-    "prepare": "husky"
+    "prepare": "husky || true"
   },
   "dependencies": {
     "@koa/router": "^15.5.0",
     "ali-oss": "^6.22.0",
     "axios": "^1.16.1",
-    "crypto": "^1.0.1",
     "debug": "^4.4.3",
     "dotenv": "^17.4.2",
     "ejs": "^5.0.2",
