@@ -13,7 +13,6 @@ RUN npm ci --omit=dev && npm i -g pm2
 COPY --from=builder /usr/src/app/dist ./dist
 COPY --from=builder /usr/src/app/public ./public
 COPY --from=builder /usr/src/app/views ./views
-COPY --from=builder /usr/src/app/.env.production ./.env.production
 COPY ecosystem.config.js ./
 RUN mkdir -p util/ssl_key
 EXPOSE 4000
