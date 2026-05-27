@@ -47,6 +47,8 @@ app.use(
       '/login.html',
       '/api/user/register',
       '/api/user/login',
+      '/api/user/refresh',
+      '/api/user/logout',
       '/api/user/public_key',
       '/api/Article',
       '/api/Article/',

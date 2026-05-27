@@ -8,28 +8,45 @@ export interface JwtSignOptions {
   userid: string;
 }
 
-class Jwt {
-  private data: string;
+type TokenType = 'access' | 'refresh';
 
-  constructor(data: string) {
-    this.data = data;
+interface FullJwtPayload extends JwtPayload {
+  type: TokenType;
+}
+
+class Jwt {
+  private userid: string;
+
+  constructor(userid: string) {
+    this.userid = userid;
   }
 
-  generateToken(): string {
-    const userid = this.data;
-    const JWT_EXPIRATION = 8 * 60 * 60;
+  generateAccessToken(): string {
+    const payload: FullJwtPayload = { userid: this.userid, type: 'access' };
+    const ACCESS_EXPIRATION = 1 * 24 * 60 * 60 * 1000; // 1day
     const cert = process.env.JWT_PRIVATE_KEY?.replace(/\\n/g, '\n') || '';
-    const token = jwt.sign({ userid }, cert, {
-      expiresIn: JWT_EXPIRATION,
+    const token = jwt.sign(payload, cert, {
+      expiresIn: ACCESS_EXPIRATION,
       algorithm: 'RS256',
     });
     return token;
   }
 
-  static verifyToken(token: string): JwtPayload | null {
+  generateRefreshToken(): string {
+    const payload: FullJwtPayload = { userid: this.userid, type: 'refresh' };
+    const REFRESH_EXPIRATION = 14 * 24 * 60 * 60; // 14 days
+    const cert = process.env.JWT_PRIVATE_KEY?.replace(/\\n/g, '\n') || '';
+    const token = jwt.sign(payload, cert, {
+      expiresIn: REFRESH_EXPIRATION,
+      algorithm: 'RS256',
+    });
+    return token;
+  }
+
+  static verifyToken(token: string): FullJwtPayload | null {
     try {
       const cert = process.env.JWT_PUBLIC_KEY?.replace(/\\n/g, '\n') || '';
-      const decoded = jwt.verify(token, cert, { algorithms: ['RS256'] }) as JwtPayload;
+      const decoded = jwt.verify(token, cert, { algorithms: ['RS256'] }) as FullJwtPayload;
       return decoded;
     } catch {
       return null;

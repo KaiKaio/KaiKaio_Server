@@ -27,14 +27,22 @@ export default (router: Router): void => {
       }
 
       const _id = resultUser._id;
-      const jwt = new JwtUtil(String(_id));
-      const token = jwt.generateToken();
+      const jwtUtil = new JwtUtil(String(_id));
+      const accessToken = jwtUtil.generateAccessToken();
+      const refreshToken = jwtUtil.generateRefreshToken();
+
+      // save refresh token in DB with expiry
+      const refreshExpiry = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000);
+      resultUser.refreshToken = refreshToken;
+      resultUser.refreshTokenExpires = refreshExpiry;
+      await resultUser.save();
 
       ctx.status = 200;
       ctx.body = {
         code: 0,
         msg: '登录成功',
-        token: token,
+        accessToken,
+        refreshToken,
       };
     } catch (error) {
       console.log(error, '登录失败原因');
@@ -132,5 +140,67 @@ export default (router: Router): void => {
       code: 0,
       msg: publicKey,
     };
+  });
+
+  // Refresh access token
+  router.post('/api/user/refresh', async (ctx: Context) => {
+    try {
+      const { refreshToken } = ctx.request.body as { refreshToken: string };
+      if (!refreshToken) throw new Error('缺少 refreshToken');
+
+      const decoded = JwtUtil.verifyToken(refreshToken);
+      if (!decoded || decoded.type !== 'refresh') throw new Error('refreshToken 无效');
+
+      const userid = decoded.userid;
+      const user = await UserModel.findById(userid).exec();
+      if (!user) throw new Error('用户不存在');
+
+      if (!user.refreshToken || user.refreshToken !== refreshToken)
+        throw new Error('refreshToken 不匹配');
+      if (user.refreshTokenExpires && user.refreshTokenExpires.getTime() < Date.now())
+        throw new Error('refreshToken 已过期');
+
+      // rotate tokens
+      const jwtNew = new JwtUtil(String(userid));
+      const newAccessToken = jwtNew.generateAccessToken();
+      const newRefreshToken = jwtNew.generateRefreshToken();
+      user.refreshToken = newRefreshToken;
+      user.refreshTokenExpires = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+      await user.save();
+
+      ctx.status = 200;
+      ctx.body = { code: 0, accessToken: newAccessToken, refreshToken: newRefreshToken };
+    } catch (error) {
+      console.log(error, 'refresh 失败原因');
+      ctx.status = 401;
+      ctx.body = { code: 401, msg: '刷新 token 失败' };
+    }
+  });
+
+  // Logout - revoke refresh token
+  router.post('/api/user/logout', async (ctx: Context) => {
+    try {
+      const { refreshToken } = ctx.request.body as { refreshToken: string };
+      if (!refreshToken) throw new Error('缺少 refreshToken');
+
+      const decoded = JwtUtil.verifyToken(refreshToken);
+      if (!decoded || decoded.type !== 'refresh') throw new Error('refreshToken 无效');
+
+      const userid = decoded.userid;
+      const user = await UserModel.findById(userid).exec();
+      if (!user) throw new Error('用户不存在');
+
+      // clear stored refresh token
+      user.refreshToken = undefined;
+      user.refreshTokenExpires = undefined;
+      await user.save();
+
+      ctx.status = 200;
+      ctx.body = { code: 0, msg: '已登出' };
+    } catch (error) {
+      console.log(error, 'logout 失败原因');
+      ctx.status = 400;
+      ctx.body = { code: 400, msg: '登出失败' };
+    }
   });
 };
