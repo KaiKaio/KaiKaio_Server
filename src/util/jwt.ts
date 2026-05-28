@@ -23,7 +23,7 @@ class Jwt {
 
   generateAccessToken(): string {
     const payload: FullJwtPayload = { userid: this.userid, type: 'access' };
-    const ACCESS_EXPIRATION = 1 * 24 * 60 * 60 * 1000; // 1day
+    const ACCESS_EXPIRATION = '1Day';
     const cert = process.env.JWT_PRIVATE_KEY?.replace(/\\n/g, '\n') || '';
     const token = jwt.sign(payload, cert, {
       expiresIn: ACCESS_EXPIRATION,
@@ -34,7 +34,7 @@ class Jwt {
 
   generateRefreshToken(): string {
     const payload: FullJwtPayload = { userid: this.userid, type: 'refresh' };
-    const REFRESH_EXPIRATION = 14 * 24 * 60 * 60; // 14 days
+    const REFRESH_EXPIRATION = '30Day';
     const cert = process.env.JWT_PRIVATE_KEY?.replace(/\\n/g, '\n') || '';
     const token = jwt.sign(payload, cert, {
       expiresIn: REFRESH_EXPIRATION,
